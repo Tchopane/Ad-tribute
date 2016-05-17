@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+<script src="js/custom/select_dcm_floodlights.js"></script>
+<script src="js/custom/header_footer.js"></script>
+
+<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+<script src="js/jquery.dataTables.min.js"></script>
+
+<title>Ad-tribute</title>
+</head>
+<body>
+
+	<script>
+		loadPage();
+		listAllFloodlights();
+		addHeaderFooter();
+		$(document).ready(
+				function() {
+					$("#selectall").change(
+							function() {
+								$(".floodlightCheckbox").prop('checked',
+										$(this).prop("checked"));
+							});
+				});
+	</script>
+
+	<div class="container">
+		<h3>Select Relevant Floodlights</h3>
+		<h6>If you subscribed for a maximum of only 5 Interactions, only
+			the 5 first selected boxes will be taken in account</h6>
+
+		<div class="row" style="margin: auto">
+
+			<div class="col-md-6">
+				<div class="table panel">
+					<div class="div-table-content">
+						<table id="table" class="table table-condensed table-hover">
+
+							<thead>
+								<TR>
+									<TH>Floodlight</TH>
+									<TH></TH>
+								</TR>
+							</thead>
+							<tbody id="data">
+								<!-- Javascript select_dcm_floodlights.js -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<input type="checkbox" id="selectall" onclick="checkAll()" /> Select
+				all
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div id="submit">
+				<button id="submitBtn" onClick="submitFloodlights()"
+					class="btn btn-primary" disabled="true">Submit</button>
+				<div id="submitted"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

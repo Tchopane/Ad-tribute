@@ -1,0 +1,258 @@
+body {
+	padding-top: 70px;
+	padding-bottom: 70px;
+	
+}
+
+.navbar-custom {
+	/* background-color: #229922; */
+	background-color: black;
+	color: #ffffff;
+	border-radius: 0;
+}
+
+/*color of the elements (Fill data, visualization) except active*/
+.navbar-custom .navbar-nav>li>a {
+	color: #fff;
+}
+
+p.instructions{
+	position:absolute;
+	left: 9%;
+	margin-top: 2cm;
+	width: 50%;
+}
+.transparent-input
+{
+    background: transparent;
+    border: none;
+    color: black;
+    outline: none;
+    margin-left : 15px;
+    
+}
+
+.highlight {
+	background: #161616 !important;
+	color: white !important;
+	box-shadow: 20px 0 0 #161616, -20px 0 0 #161616 !important;
+	font-family: "interstateblackcondensed", sans-serif;
+	font-size: 70px;
+	white-space: nowrap;
+	margin: auto;
+	font-weight: bold;
+}
+
+#message_box {
+position: absolute;
+top: 50px; left: 0;
+z-index: 10;
+background:#ffc;
+padding:5px;
+border:1px solid #CCCCCC;
+text-align:center;
+font-weight:bold;
+width:100%;
+}
+
+.highlightTotal {
+	background: #161616 !important;
+	color: #ffdc00 !important;
+	box-shadow: 20px 0 0 #161616, -20px 0 0 #161616 !important;
+	font-family: "interstateblackcondensed", sans-serif;
+	font-size: 20px;
+	white-space: nowrap;
+	margin: auto;
+	font-weight: bold;
+}
+
+.dropdown>a:hover, .dropdown>a:focus {
+	background-color: #ffdc00 !important;
+	color: black !important;
+}
+
+.dropdown-menu {
+	background-color: black !important;
+}
+
+.dropdown-menu li>a, .dropdown-menu li>a {
+	color: white !important;
+}
+
+.dropdown-menu li>a:hover, .dropdown-menu li>a:focus, .dropdown-menu>.active>a
+	{
+	background-color: #ffdc00 !important;
+	color: black !important;
+}
+
+.artTitle {
+	color: #ffdc00 !important;
+	font-family: "interstateblackcondensed", sans-serif;
+	font-size: 220px;
+	margin: auto;
+	font-weight: bold;
+}
+
+/*color of active */
+.navbar-custom .navbar-nav>.active>a, .navbar-nav>.active>a:hover,
+	.navbar-nav>.active>a:focus {
+	color: #ffffff;
+	background-color: transparent;
+}
+
+/* color of the name */
+.navbar-custom .navbar-brand {
+	color: #eeeeee;
+}
+
+.group-div {
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 38px;
+	border-color: #e1c600;
+	background-color: #FFDC00;
+	border-radius: 7px;
+	font-weight: "bold";
+}
+#sortable li{
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 38px;
+	border-color: #e1c600;
+	background-color: #FFDC00;
+	border-radius: 7px;
+	font-weight: "bold";
+}
+#trash {
+    height: 90%; 
+    text-align:center; 
+    display:table;
+    width:100%;
+}
+#trash h3 {display:table-cell; vertical-align:middle}
+
+.hidden-div {
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 38px;
+	border-color: #e1c600;
+	background-color: #000000;
+	border-radius: 7px;
+	font-weight: "bold";
+	color: "white";
+}
+
+.campaign-div {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 38px;
+	border-color: #e1c600;
+	background-color: #FFDC00;
+	border-radius: 7px;
+	font-weight: "bold";
+	z-index: 2;
+	cursor: pointer;
+}
+
+.btn-primary {
+	color: black;
+	border-color: #e1c600;
+	background-color: #FFDC00;
+}
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active,
+	.btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary
+	{
+	color: black;
+	background-color: #e1c600;
+	border-color: #FFDC00;
+}
+
+.btn-secondary {
+	border: none;
+	color: black;
+	border-color: #e1c600;
+	background-color: #FFDC00;
+	border-radius: 7px;
+	height: 40px;
+	width: 90px;
+}
+
+/*.my-footer, .navbar-fixed-bottom, .navbar-inverse{
+     //position: absolute;
+      //bottom: 0;
+      //background-color:#229922;
+      align-text:center;
+       border-radius:0;
+       
+    }*/
+.center {
+	text-align: center;
+}
+
+.resize {
+	height: 50px;
+}
+
+/* body {
+	padding-bottom: 85px;
+	position: relative;
+} */
+
+.grey {
+	background-color: #ababab;
+}
+
+.red {
+	background-color: rgb(237, 28, 36);
+}
+
+.blue {
+	background-color: #43bbef;
+}
+
+.nv-pieLabels text {
+	fill: white !important;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.spinner {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -50px; /* half width of the spinner gif */
+	margin-top: -50px; /* half height of the spinner gif */
+	text-align: center;
+	z-index: 1234;
+	overflow: auto;
+	width: 100px; /* width of the spinner gif */
+	height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+
+.overlay {
+	background-color: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index:1000;
+}
+
+#container {
+
+height:300px;
+    overflow:auto;
+}
+
+.keywords {
+height:100px;
+}
+
+#space{
+display: inline-block;
+height: 100px;
+}

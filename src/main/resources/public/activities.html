@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="css/bootstrap-select.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/table.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/custom/header_footer.js"></script>
+<script src="js/custom/activities.js"></script>
+<script src="js/floating-1.12.js"></script>
+
+<title>New analysis</title>
+</head>
+<style>
+#sortable {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 60%;
+}
+
+#newName {
+	border-radius: 6px;
+}
+.ui-state-highlight { height: 2.9em; line-height: 1.2em; }
+</style>
+<script>
+	$(function() {
+		$("#sortable").sortable({
+			placeholder : "ui-state-highlight"
+		});
+		$("#sortable").disableSelection();
+	});
+</script>
+<body>
+	<script>
+		loadPage();
+		addHeaderFooter();
+	</script>
+	<script>
+		pageContent();
+		ajaxRequest();
+	</script>
+
+	<br>
+	<br>
+	<br>
+	<div id="floatdiv"
+		style="position: absolute; width: 300px; padding: 16px; background: #000000; z-index: 1; color: #FFFFFF; font-weight: bold; margin-top: 50px; top:0px; right : 0px; bottom:0px;">
+
+		<br> List of different States :
+		<p>
+		<div id="newGroupDiv">
+			<button onClick="addGroup()" type="button" id="newGroup"
+				name="newGroup" class="btn btn-primary" style="z-index: 100">Add
+				a state</button>
+				<button onClick="setStateOrder()" type="button" id="newOrder"
+				name="newOrder" class="btn btn-primary" style="z-index: 100">Set State Order</button>
+				<br><br>
+			<input type="text" id="newName" style="color: black"> <br><br>
+			<p>
+			<ul id="sortable">
+				<li class="ui-state-default">Awareness</li>
+				<li class="ui-state-default">Consideration</li>
+				<li class="ui-state-default">Action</li>
+				<li class="ui-state-default">Exclude</li>
+			</ul>
+			
+		</div>
+		<br> <br>
+		<div id="trash" class="campaign-div"
+			style="width: 268px; height: 200px; background-color: #C0C0C0; vertical-align: middle">
+			<h3>Trash</h3>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		//make the trash droppable
+		$("#trash").droppable({
+			activeClass : "ui-state-highlight",
+			drop : function(event, ui) {
+				var tempId = ui.draggable.context.id;
+				if (tempId != "") {
+					var toRemove = document.getElementById(tempId);
+					var parent = document.getElementById("sortable");
+					parent.removeChild(toRemove);
+				}
+				var selectors = document.getElementsByTagName("select");
+				for (k = 0; k < selectors.length; k++) {
+					var options = selectors[k].options;
+					for (j = 0; j < options.length; j++) {
+						if (options[j].value.localeCompare(tempId) === 0) {
+							selectors[k].removeChild(options[j]);
+							var currentId = selectors[k].id;
+							$("#" + currentId).selectpicker('refresh');
+						}
+					}					
+				}
+			}
+		});
+	</script>
+</body>
+</html>

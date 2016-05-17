@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/table.css">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/custom/header_footer.js"></script>
+<script src="js/custom/journeys.js"></script>
+
+<title>Journey</title>
+</head>
+
+<body>
+	<script>
+		loadPage();
+		addHeaderFooter();
+	</script>
+	<div class="container">
+		<h3>Please choose the way you want your activities to be cleaned</h3>
+		<br> <br>
+		<h4>When we have got an "Exclude" Activity</h4>
+		<br>
+		<form>
+			<script type="text/javascript">
+				function checkbox() {
+					if ((document.getElementById('exclude1').checked || document.getElementById('exclude2').checked)
+							&& (document.getElementById('action1').checked || document.getElementById('action2').checked || document.getElementById('action3').checked)) {
+						document.getElementById('submitBtn').disabled = false;
+					} else {
+						document.getElementById('submitBtn').disabled = true;
+					}
+				}
+			</script>
+			<input type="radio" name="exclude" value="1" id="exclude1"
+				OnClick="checkbox();"> Remove all placements and all
+			activities after the ‘Exclude’ Activity in the person's journey <br>
+			<input type="radio" name="exclude" value="2" id="exclude2"
+				OnClick="checkbox();"> Remove the complete journey when an
+			‘Exclude’ Activity occurs <br> <br> <br>
+			<h4>After an Action we have 3 options</h4>
+			<br> <input type="radio" name="action" value="1" id="action1"
+				OnClick="checkbox();"> Back to Consideration <br> <input
+				type="radio" name="action" value="2" id="action2"
+				OnClick="checkbox();"> Back to Awareness <br> <input
+				type="radio" name="action" value="3" id="action3"
+				OnClick="checkbox();"> Exclude all placements and all
+			activities after the action in the person's journey <br> <br>
+			<button onClick="selectClean()" type="button" id="submitBtn"
+				name="submitBtn" class="btn btn-primary" disabled="true">Clean
+				Activities</button>
+		</form>
+	</div>
+
+</body>
+</html>

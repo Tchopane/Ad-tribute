@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="css/bootstrap-select.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/table.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/custom/header_footer.js"></script>
+<script src="js/custom/create_groups.js"></script>
+<script src="js/floating-1.12.js"></script>
+
+<title>Create Groups for Interactions</title>
+</head>
+<body style="position: relative;">
+	<div id="overlay" class="overlay" style="position: absolute; top:0px; bottom: 0px; left: 0px; right: 0px; display:none; z-index: 1000"></div>
+	<script>
+		addHeaderFooter();
+		pageContent();
+		cleanGlobals();
+		numberMaxGroup(myCallback);
+	</script>
+	<div id="first" class="container" style="position: relative;">
+		<div id="title"></div>
+		<div id="campaigns">
+			<h3>List of Paid Search Campaigns</h3>
+		</div>
+		<p>
+		<div id="campaignsList">
+			<div id="helper"
+				style="position: absolute; right: 0px; top: 200px; width: 550px; font-size: 180%; font-family: Calibri;">
+				Please add as much groups as you want and assign each campaign to a
+				group. A campaign may be assigned to different groups, and all
+				campaigns need to be assigned at least once.</div>
+		</div>
+	</div>
+	<p>
+	<p>
+	<p>
+		<br> <br> <br>
+	<div id="second" class="container"
+		style="position: relative; display: none">
+		<div id="keywords">
+			<h3>List of Paid Search Keywords</h3>
+		</div>
+		<div id="space"></div>
+		<div id="keywordsList">
+			<div id="helper" style="position: relative; width: 100%; font-size: 180%; font-family: Calibri;">
+				Please make the distinction between the different groups of the same campaign, using the keywords.</div>
+		</div>
+	</div>
+	<p>
+
+	<div id="floatdiv"
+		style="position: absolute; width: 300px; padding: 16px; background: #000000; z-index: 1; border-radius: 10px 0px 0px 10px; color: #FFFFFF; font-weight: bold;">
+
+		<br> List of Interactions Groups :
+		<p>
+		<div id="newGroupDiv">
+			<button onClick="addGroup()" type="button" id="newGroup"
+				name="newGroup" class="btn btn-primary" style="z-index: 100">Add
+				a group</button>
+			<br> <br> <select class="form-control selectpicker"
+				data-header="Remove Group" title="Remove Group"
+				onchange="removeGroup()" name='removeGroup' id="removeGroup"
+				data-size="4">
+
+			</select>
+			<div id="next" style="position: absolute; right: 20px; top: 64px;">
+			<button onClick="makeVisible()" type="button" id="kwBtn" name="kwBtn"
+				class="btn btn-primary" disabled="true">Set Keywords</button>
+		</div>
+			<div id="next2" style="position: absolute; right: 20px; top: 64px; display: none">
+			<button onClick="goNext()" type="button" id="kwBtn2" name="kwBtn2"
+				class="btn btn-primary" disabled="true">Next</button>
+		</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		//when the close button at right corner of the message box is clicked
+		$('#close_message').click(function() {
+			//the messagebox gets scrool down with top property and gets hidden with zero opacity
+			$('#message_box').animate({
+				top : "+=15px",
+				opacity : 0
+			}, "slow");
+		});
+	</script>
+	<script type="text/javascript">
+		floatingMenu.add('floatdiv', {
+			// Represents distance from left or right browser window  
+			// border depending upon property used. Only one should be  
+			// specified.  
+			//targetLeft : 0,
+			targetRight : 0,
+
+			// Represents distance from top or bottom browser window  
+			// border depending upon property used. Only one should be  
+			// specified.  
+			//targetTop : 40,
+			//targetBottom : 0,
+
+			// Uncomment one of those if you need centering on  
+			// X- or Y- axis.  
+			// centerX: true,  
+			centerY : true,
+
+			// Remove this one if you don't want snap effect  
+			snap : true
+		});
+	</script>
+</body>
+</html>

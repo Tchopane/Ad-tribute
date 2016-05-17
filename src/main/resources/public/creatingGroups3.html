@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="css/bootstrap-select.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/table.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/custom/header_footer.js"></script>
+<script src="js/custom/create_groups3.js"></script>
+<script src="js/floating-1.12.js"></script>
+
+<title>Create Groups for Interactions</title>
+</head>
+<body style="position: relative;">
+	<script>
+		cleanGlobals();
+		addHeaderFooter();
+		pageContent();
+		numberMaxGroup(myCallback);
+	</script>
+	<div id="second" class="container" style="position: relative;">
+	<div id="title"></div>
+		<div id="keywords">
+			<h3>List of Paid Search Keywords</h3>
+		</div>
+		<div id="keywordsList">
+		<div id="helper" style="position:absolute; right: 0px; top:200px; width:550px; font-size:180%; font-family: Calibri;">
+			Please add as much groups as you want and 
+			assign each keyword to a group. A keyword may be assigned to different groups, and all keywords need to be assigned at least once.</div>
+		</div>
+		<p>
+	</div>
+	<div id="floatdiv"
+		style="position: absolute; width: 300px; padding: 16px; background: #000000; z-index: 1; border-radius: 10px 0px 0px 10px; color: #FFFFFF; font-weight: bold;">
+
+		<br> List of Interactions Groups :
+		<p>
+		<div id="newGroupDiv">
+			<button onClick="addGroup()" type="button" id="newGroup"
+				name="newGroup" class="btn btn-primary" style="z-index: 100">Add
+				a group</button>
+			<br> <br> <select class="form-control selectpicker"
+				data-header="Remove Group" title="Remove Group"
+				onchange="removeGroup()" name='removeGroup' id="removeGroup"
+				data-size="4">
+
+			</select>
+			<div id="next2"
+			style="position: absolute; right: 20px; top: 64px;">
+			<button onClick="goNext()" type="button" id="kwBtn" name="kwBtn"
+				class="btn btn-primary" disabled="true">Next</button>
+			<br>
+		</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		floatingMenu.add('floatdiv', {
+			// Represents distance from left or right browser window  
+			// border depending upon property used. Only one should be  
+			// specified.  
+			//targetLeft : 0,
+			targetRight : 0,
+
+			// Represents distance from top or bottom browser window  
+			// border depending upon property used. Only one should be  
+			// specified.  
+			//targetTop : 40,
+			//targetBottom : 0,
+
+			// Uncomment one of those if you need centering on  
+			// X- or Y- axis.  
+			// centerX: true,  
+			centerY : true,
+
+			// Remove this one if you don't want snap effect  
+			snap : true
+		});
+	</script>
+</body>
+</html>

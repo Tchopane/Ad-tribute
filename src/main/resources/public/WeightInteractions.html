@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/table.css">
+<link rel="stylesheet" type="text/css" href="css/Aristo/Aristo.css">
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/custom/header_footer.js"></script>
+<script src="js/custom/weight.js"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"></script>
+
+
+<title>Weight Interactions</title>
+</head>
+<body>
+	<script>
+		addHeaderFooter();
+		loadPage();
+	</script>
+	<div style="width: 65%; margin: 0 auto;">
+		<h3>We now want to determine the period of analysis, which has to
+			be included in the first date range you chose. This will make us able
+			to assign a weight to each placement</h3>
+			<br>
+	</div>
+	<div class="container">
+		<div class="row">
+			<p>
+				<b>Select Report Period:</b>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label class="control-label" for="startDate">Start date</label> <input
+						class="form-control datepicker" type="text" name="startDate"
+						id="startDate" value=""> <span class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label class="control-label" for="endDate">End date</label> <input
+						class="form-control datepicker" type="text" name="endDate"
+						id="endDate" value=""> <span class="help-block"> </span>
+				</div>
+			</div>
+		</div>
+		<div id="submitDiv" style="position: absolute; width: 65%; right:15%">
+			<button onClick="weight()" type="button" id="submitBtn"
+				name="submitBtn" class="btn btn-primary">Choose this Period</button>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('.datepicker').datepicker({
+				dateFormat : 'dd-mm-yy'
+			});
+		});
+	</script>
+</body>
+</html>

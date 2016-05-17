@@ -1,0 +1,17 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#optionBox{
+	margin-left: 15px;
+}
+
+.table {
+  table-layout:fixed;  
+}
+
+.div-table-content {
+  height:420px;
+  overflow-y:auto;
+}

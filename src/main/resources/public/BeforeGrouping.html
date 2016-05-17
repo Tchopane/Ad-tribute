@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<link rel="icon" href="/img/favicon.png">
+<link rel="stylesheet" href="css/bootstrap-select.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/table.css">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"></script>
+
+<script src="js/custom/header_footer.js"></script>
+<script src="js/custom/select_placements.js"></script>
+
+<title>Before Grouping Placements</title>
+</head>
+<body>
+	<script>
+		cleanGlobals();
+		addHeaderFooter();
+		listAllPlacements();
+	</script>
+	<br>
+	<br>
+	<br>
+	<div class="container" id="main">
+		<h3>In order to build the interactions groups, do you want to
+			retrieve the campaign and keywords informations?</h3>
+		<br> <input type="radio" name="retrieve" value="1" id="yes"
+			OnClick="question2('q2');"> <label for="yes">Yes</label> 
+			<br> 
+			<input type="radio"
+			name="retrieve" value="2" id="no" OnClick="nextButton();"> <label for="no">No</label>
+		<br> <br>
+		<div id="q2" style="display: none;">
+			<h3>Which placements have campaign data? Please select at least
+				one.</h3>
+			<div class="row">
+				<div class="col-md-2" id="selectpicker-container">
+					<select class="form-control selectpicker" data-live-search="true"
+						name='placementsId' id="placementsList" data-size="7"
+						title="Choose at least one of the following..." data-width="600px"
+						multiple>
+					</select>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div id="q3">
+			<div id="temp"></div>
+		</div>
+		<div id="space"></div>
+	</div>
+</body>
+</html>
