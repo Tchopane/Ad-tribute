@@ -1,5 +1,5 @@
-function loadPage(){
-var loadingSpinner = document.createElement("div");
+function loadPage() {
+	var loadingSpinner = document.createElement("div");
 	loadingSpinner.className = "spinner";
 	loadingSpinner.id = "spinner";
 	loadingSpinner.style.display = "none";
@@ -9,11 +9,11 @@ var loadingSpinner = document.createElement("div");
 	loadingImage.alt = "Loading";
 	loadingSpinner.appendChild(loadingImage);
 
-var dark = document.createElement("div");
+	var dark = document.createElement("div");
 	dark.className = "overlay";
 	dark.style.display = "none";
-	dark.id="overlay";
-	
+	dark.id = "overlay";
+
 	document.getElementsByTagName('body')[0].appendChild(loadingSpinner);
 	document.getElementsByTagName('body')[0].appendChild(dark);
 
@@ -35,16 +35,16 @@ function weight() {
 	var startDate = document.getElementById("startDate").value;
 	var endDate = document.getElementById("endDate").value;
 	$.ajax({
-		/*url : "./RecapInteraction/SetWeights?startDate=" + startDate + "&endDate=" + endDate,
+		url : "./RecapInteraction/SetWeights?startDate=" + startDate + "&endDate=" + endDate,
 		type : "POST",
 		success : function() {
-			$.ajax({*/
+			$.ajax({
 				url : "./RecapInteraction/FillTransitionMatrices",
 				type : "POST",
 				success : function() {
 					window.location.href = "index.html";
-/*				}
-			})*/
+				}
+			})
 		}
 	})
 }

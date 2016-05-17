@@ -134,7 +134,7 @@ public class RecapInteractionController {
 					long nextTimeStamp1 = temp.get(0).getTimestamp().getTime() + temp.get(0).getTimeToNextState() * 1000;
 					long nextTimeStamp2 = recapInteractionList.get(0).getTimestamp().getTime() + recapInteractionList.get(0).getTimeToNextState() * 1000;
 					if (temp.get(0).getBeginState().equals(recapInteractionList.get(0).getBeginState()) && temp.get(0).getEndState().equals(recapInteractionList.get(0).getEndState())
-							&& nextTimeStamp1 == nextTimeStamp2) {
+							&& nextTimeStamp1 == nextTimeStamp2) {// if all the conditions are met it means that the next element is between the two same activities
 						temp.add(recapInteractionList.get(0));
 						recapInteractionList.remove(0);
 						continue;

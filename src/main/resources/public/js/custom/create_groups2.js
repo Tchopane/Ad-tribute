@@ -245,7 +245,7 @@ function addGroup() {
 		}, speed);
 	}, function() {
 		var c = document.getElementById("group" + displayedNum).children;
-		for (var i = 0; i < c.length; i++) {
+		for (var i = 1; i < c.length; i++) {
 			c[i].style.display = "none";
 		}
 		$(this).stop().animate({
